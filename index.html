@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cryptocurrency</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <!-- Transaction Item-->
+    <div class="wallet">
+      <div class="overlay">
+        <div class="card-form">
+          <header>
+            <h2>
+              <div class="type">Cryptocurrency</div>
+              <span>Buy a coin</span>
+            </h2>
+            <div class="a close" href="#"></div>
+          </header>
+          <div class="form">
+            <div class="form-row">
+              <div class="input-group">
+                <label for="">Coin</label>
+                <input id="cardName" type="text" value="" placeholder="" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="input-group">
+                <label for="">Amount</label>
+                <input
+                  id="cardNumber"
+                  type="text"
+                  value=""
+                  maxlength="16"
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div class="form-row"></div>
+          </div>
+          <footer class="footer">
+            <button class="button">PURCHASE COIN</button>
+          </footer>
+        </div>
+      </div>
+      <div class="cards" style="background-color: #4c99ff;">
+        <header>
+          <h2>COIN</h2>
+          <a id="add" href="#"></a>
+        </header>
+      </div>
+      <div class="activity active" data-id="1234">
+        <header>
+          <h2>Balance</h2>
+          <span>$0.<i>00</i></span>
+        </header>
+
+        <div class="profit">
+          <h1>
+            Profit:
+            <span style="font-size: large; font-weight: bold;" id="prft">
+            </span>
+            <span
+              id="percent"
+              style="font-size: large; font-weight: bold; float: right;"
+            >
+            </span>
+          </h1>
+        </div>
+
+        <div class="content">
+          <div class="transaction">
+            <div class="icon-type">
+              <div class="icon #{type}" onclick="myfunction(this)"></div>
+            </div>
+            <div class="description">
+              <div class="info">
+                <h3>Test</h3>
+                <span> Uncategorized</span> <span>0</span>-
+                <span>11 July, 2015</span>
+              </div>
+              <div class="price #{type}">$0.<i>00</i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- partial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://codepen.io/andytran/pen/vLmRVp.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
