@@ -3,7 +3,8 @@ String.prototype.replaceAt = function (index, character) {
     this.substr(0, index) + character + this.substr(index + character.length)
   );
 };
-
+document.getElementsByClassName("content")[0].children[0].style.display =
+  "none";
 String.prototype.insert = function (index, string) {
   if (index > 0)
     return (
@@ -129,7 +130,7 @@ $(document).on("keydown", ".type-form", function (e) {
 
 let Coins = {};
 var total = 0;
-
+var numberChildren = 0;
 $(document).ready(function () {
   $(".card-form .button").click(function () {
     var coin = $("#cardName").val();
@@ -145,12 +146,15 @@ $(document).ready(function () {
 
     $.ajax(settings).done(function (response) {
       const rate = response.rate;
+
       if (!Coins.hasOwnProperty(coin)) {
         Coins[coin] = rate * amount;
         var cln = document
           .getElementsByClassName("content")[0]
-          .children[0].cloneNode(true);
+          .children[numberChildren].cloneNode(true);
+
         cln.children[1].children[0].children[0].innerHTML = coin;
+
         var num = Coins[coin].toFixed(2);
         var num1 = (num + "").split(".")[0];
         var num2 = (num + "").split(".")[1];
@@ -167,6 +171,8 @@ $(document).ready(function () {
         cln.getElementsByClassName("info")[0].children[2].innerHTML = amount;
 
         total += Coins[coin];
+        numberChildren = +1;
+        cln.style.display = "flex";
         $(".form input").val("");
         $(".overlay").hide();
       } else {
